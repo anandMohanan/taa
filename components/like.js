@@ -83,6 +83,7 @@ export const Like = ({ user, post }) => {
             d="M7 11l5-5m0 0l5 5m-5-5v12"
           />
         </svg>
+        {post.likeCount}
       </a>
     </Link>
   );
