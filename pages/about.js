@@ -43,7 +43,7 @@ export default function About() {
           //   className="mx-auto"
         />
       </section>
-      <p className="text-center italic text-text-secondary px-40">
+      <p className="ml-4 italic text-text-secondary ">
         &quot;Apollo is the god of music, poetry, art, oracles, archery, plague,
         medicine, sun, light, and, knowledge.&quot;
       </p>

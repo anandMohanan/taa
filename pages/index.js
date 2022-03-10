@@ -14,7 +14,17 @@ export default function Home() {
   });
   const { data, fetching, error } = result;
 
-  if (fetching) return "loading";
+  if (fetching)
+    return (
+      <div className="flex justify-center align-middle items-center">
+        <div
+          className=" spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
+          role="status"
+        >
+          {/* <span className="visually-hidden">Loading...</span> */}
+        </div>
+      </div>
+    );
   if (error) {
     console.log(error);
   }
