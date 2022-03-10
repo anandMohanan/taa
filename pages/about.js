@@ -46,7 +46,7 @@ export default function About() {
           //   className="mx-auto"
         />
       </section>
-      <p className="ml-4 italic text-text-secondary ">
+      <p className="ml-4 italic text-text-secondary text-center ">
         &quot;Apollo is the god of music, poetry, art, oracles, archery, plague,
         medicine, sun, light, and, knowledge.&quot;
       </p>
@@ -54,7 +54,8 @@ export default function About() {
       <div className="p-10">
         <p className="text-text font-bold text-lg">
           The aesthete’s arena is a community to portray writing,visual
-          art,internet culture research and beyond.
+          art,internet culture research and beyond. <br /> This site is still in
+          development.
         </p>
       </div>
     </>
