@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useQuery } from "urql";
+import { Loading } from "../../components/Loading";
 const Editor = dynamic(
   () => import("react-draft-wysiwyg").then((module) => module.Editor),
   { ssr: false }
@@ -22,17 +23,7 @@ export default function SinglePost() {
 
   const { data, fetching, error } = result;
   console.log(data);
-  if (fetching)
-    return (
-      <div className="flex justify-center align-middle items-center">
-        <div
-          className=" spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
-          role="status"
-        >
-          {/* <span className="visually-hidden">Loading...</span> */}
-        </div>
-      </div>
-    );
+  if (fetching) return <Loading />;
   if (error) {
     alert(`Error ${error} - Please reload the page`);
   }

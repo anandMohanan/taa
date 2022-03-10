@@ -2,6 +2,7 @@ import { convertFromRaw, EditorState } from "draft-js";
 import Head from "next/head";
 import Link from "next/link";
 import { useQuery } from "urql";
+import { Loading } from "../components/Loading";
 
 import { MenuBar } from "../components/menuBar";
 import { Posts } from "../components/posts";
@@ -14,17 +15,7 @@ export default function Home() {
   });
   const { data, fetching, error } = result;
 
-  if (fetching)
-    return (
-      <div className="flex justify-center align-middle items-center">
-        <div
-          className=" spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full"
-          role="status"
-        >
-          {/* <span className="visually-hidden">Loading...</span> */}
-        </div>
-      </div>
-    );
+  if (fetching) return <Loading />;
   if (error) {
     console.log(error);
   }

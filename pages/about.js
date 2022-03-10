@@ -7,8 +7,11 @@ export default function About() {
     <>
       <Head>
         <title>About</title>
-        <meta name="login" content="login page of The aesthete’s arena" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="about" content="about The aesthete’s arena" />
+        <link
+          rel="icon"
+          href="https://i.ibb.co/6ns5q9k/apollo-god-of-sun-symbol-logo-trademark-antelope-wildlife-transparent-png-1515689-removebg-preview.png"
+        />
       </Head>
 
       <nav className="flex justify-between p-4 ">
