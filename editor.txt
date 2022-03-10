@@ -1,0 +1,3 @@
+const contentState = convertFromRaw(JSON.parse(a));
+const state = EditorState.createWithContent(contentState);
+<Editor editorState={state} readOnly={true} toolbarClassName="!hidden" />
