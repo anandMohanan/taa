@@ -49,12 +49,12 @@ export default function CreatePost() {
         setErrors(result.error.graphQLErrors[0].extensions.errors);
         // console.log(result.error);
       } else {
-        console.log(result);
+        
         router.push("/");
         // router.reload(window.location.pathname);
       }
     });
-    console.log("POST", post);
+    
   };
 
   return (

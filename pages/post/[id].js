@@ -23,12 +23,12 @@ export default function SinglePost() {
   });
 
   const { data, fetching, error } = result;
-  // console.log(data);
+ 
   if (fetching) return <Loading />;
   if (error) {
     alert(`Error ${error} - Please reload the page`);
   }
-  console.log(data.getPost);
+  
   const contentState = convertFromRaw(JSON.parse(data.getPost.body)) || "hi";
   const state = EditorState.createWithContent(contentState);
   let a = data.getPost.image ? (

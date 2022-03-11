@@ -10,7 +10,7 @@ export const Posts = ({ post }) => {
   const [deletePostResult, deletePostAction] = useMutation(DELETE_MUTATION);
   const { user } = useContext(AuthContext);
   const router = useRouter();
-  console.log(post.username);
+
   const variables = {
     postId: post.id,
   };
@@ -19,7 +19,6 @@ export const Posts = ({ post }) => {
       if (result.error) {
         console.log(result.error);
       } else {
-        console.log(result);
         router.reload(window.location.pathname);
       }
     });
