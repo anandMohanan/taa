@@ -30,6 +30,7 @@ export const POST_BY_ID_QUERY = gql`
       likeCount
 
       createdAt
+      image
     }
   }
 `;

@@ -1,8 +1,8 @@
 import { gql } from "urql";
 
 export const CREATE_POST = gql`
-  mutation ($title: String!, $body: String!) {
-    createPost(title: $title, body: $body) {
+  mutation ($title: String!, $body: String!, $image: String) {
+    createPost(title: $title, body: $body, image: $image) {
       id
       title
       body

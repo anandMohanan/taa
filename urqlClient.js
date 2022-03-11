@@ -12,6 +12,7 @@ const ssrCache = ssrExchange({ isClient: !isServerSide });
 
 const client = createClient({
   // url: "https://blooming-gorge-19416.herokuapp.com/",
+  // url: "https://theaesthetesarena.azurewebsites.net/",
   url: "https://theaesthetesarena.azurewebsites.net/",
   exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
   fetchOptions: () => {

@@ -5,7 +5,7 @@ import { convertToRaw, EditorState, RichUtils } from "draft-js";
 import Link from "next/link";
 import { useMutation } from "urql";
 import { useRouter } from "next/router";
-
+import FileBase from "react-file-base64";
 import { CREATE_POST } from "../graphql/mutations";
 import Head from "next/head";
 
@@ -31,6 +31,7 @@ export default function CreatePost() {
   const [post, setPost] = useState({
     title: "",
     body: "",
+    image: "",
   });
 
   const handleKeyCommand = (command, editorState) => {
@@ -46,13 +47,14 @@ export default function CreatePost() {
     setCreatePost(post).then((result) => {
       if (result.error) {
         setErrors(result.error.graphQLErrors[0].extensions.errors);
+        // console.log(result.error);
       } else {
         console.log(result);
         router.push("/");
         // router.reload(window.location.pathname);
       }
     });
-    console.log(post);
+    console.log("POST", post);
   };
 
   return (
@@ -88,6 +90,17 @@ export default function CreatePost() {
           placeholder="TITLE"
           value={post.title}
           onChange={(e) => setPost({ ...post, title: e.target.value })}
+          className="p-3 box-border outline-none  placeholder-blueGray-300 text-text font-bold relative text-sm   focus:ring w-full"
+        />
+      </div>
+
+      <div className="mb-3 pt-0 flex object-center items-center text-text">
+        <FileBase
+          type="file"
+          placeholder="Upload a image"
+          value={post.image}
+          multiple={false}
+          onDone={({ base64 }) => setPost({ ...post, image: base64 })}
           className="p-3 box-border outline-none  placeholder-blueGray-300 text-text font-bold relative text-sm   focus:ring w-full"
         />
       </div>

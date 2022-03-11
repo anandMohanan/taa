@@ -1,3 +1,48 @@
 const contentState = convertFromRaw(JSON.parse(a));
 const state = EditorState.createWithContent(contentState);
 <Editor editorState={state} readOnly={true} toolbarClassName="!hidden" />
+
+
+
+---------------------------------\\
+
+
+// import { useQuery } from "urql";
+// import { Loading } from "../components/Loading";
+// import { Posts } from "../components/posts";
+// import { POST_QUERY } from "../graphql/queries";
+
+// export default function Liked() {
+//   const [result] = useQuery({
+//     query: POST_QUERY,
+//   });
+//   const { data, fetching, error } = result;
+//   //   console.log(data);
+
+//   const compare = (a, b) => {
+//     if (a.likeCount < b.likeCount) {
+//       return 1;
+//     }
+//     if (a.likeCount > b.likeCount) {
+//       return -1;
+//     }
+//     return 0;
+//   };
+//   if (fetching) return <Loading />;
+
+//   data.getPosts.sort(compare);
+
+//   return (
+//     <>
+//       {data.getPosts &&
+//         data.getPosts.map((post) => {
+//           return (
+//             // eslint-disable-next-line react/jsx-key
+//             <Posts post={post} />
+//           );
+//         })}
+//     </>
+//   );
+
+//   //   if (data) console.log(data.getPosts);
+// }
